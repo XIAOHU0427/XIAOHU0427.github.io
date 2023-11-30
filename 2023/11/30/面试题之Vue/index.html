@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git教程, XIAOHU">
-    <meta name="description" content="本文分享一些git的常见基础面试题及答案，记住这些基础，再去面试就有些底气了。">
+    <meta name="keywords" content="XIAOHU">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git教程 | XIAOHU</title>
+    <title>XIAOHU</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -334,12 +334,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git教程</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -361,13 +361,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -379,7 +375,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-15
+                    2023-11-30
                 </div>
                 
 
@@ -400,78 +396,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#1.安装<br>首先是下载，可以在官网下对应的。</p>
-<p>但是官网很慢，所以我们可以靠tb镜像：</p>
-<p><a target="_blank" rel="noopener" href="https://registry.npmmirror.com/binary.html?path=git-for-windows/%22tb%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BDgit%22">tb镜像下载git</a></p>
-<p>下最新版，根据自己电脑的情况，比如我是64位我就下64的。</p>
-<p>下载完毕后直接一路默认。选编译器那块，可以选自己用的，如vim、vscode。</p>
-<p>下载完后打开终端输入git -v可以看到：  </p>
-<p>mac:<br><img src="https://i.postimg.cc/gcZyWJRW/img5.png" alt="Mac" title="mac" /><br><img src="https://img-blog.csdnimg.cn/9ca8df71168349f5b6ab36ae65187b49.png" alt="示例图片"></p>
-<p>window:   桌面单击右键可以看到：</p>
-<p><img src="https://img-blog.csdnimg.cn/65f07ef70d114ee38219928f681bfae1.png" alt="window"></p>
-<p>有以上两个其实就是安装成功了。</p>
-<p>其中，GUI是图形界面，不适合初学者；一般我们都用的是上面的Bash，点击后会进入命令行输入框。</p>
-<p>#配置</p>
-<p>打开Git Bush</p>
-<p>可以查看git中的所有配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config -l</span><br></pre></td></tr></table></figure>
-
-<p>配置用户名和密码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;名称&quot;</span><br><span class="line">git config --global user.email &quot;邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>查看当前用户配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --list</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>git工作的流程：<br>在工作目录中添加、修改文件-&gt;<br>将需要进行版本管理的文件放入暂存区域-&gt;git add .<br>查看状态： git status<br>将暂存区域的文件提交到git仓库-&gt;git commit<br>推送到远程仓库。 git pull</p>
-</blockquote>
-<p>git status用法</p>
-<p>通过git init 初始化一个git仓库，通过git status命令发现有两个未被git追踪 的文件，</p>
-<p>使用git add命令将这两个文件添加到暂存区之后，</p>
-<p>再次使用git status命令，发现有两个文件可以被commit,就是我们刚刚添加的两个文件，<br>git 提示我们可以使用<code>git rm --cached &lt;file&gt;...</code>来删除暂存区内不想要的文件，接下来通过git commit进行第一次commit，再次使用git status命令查看显示工作目录和暂存区的状态。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190729232237544.png" alt="git"></p>
-<p>重点：</p>
-<p>git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
-<p>#项目创建及克隆</p>
-<p>如果我们要创建本地仓库有两种方式：一种是创建全新的仓库，另一种是克隆远程仓库。</p>
-<p>##创建全新仓库</p>
-<p>需要用到git管理的项目的根目录执行。</p>
-<p>我设置了一个空的文件夹：</p>
-<p>接着，右键选择Git Bash，进行初始化：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-
-<p>初始化后会出现一个.git文件，但是这个文件是默认隐藏的，需要设置取消隐藏才能看到：</p>
-<p><img src="https://img-blog.csdnimg.cn/f1139a364328437ba24bff31006c3aa0.png" alt="tupian"></p>
-<p>##克隆远程仓库</p>
-<p>如果在远程仓库上有项目，可以使用进行克隆：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone url</span><br></pre></td></tr></table></figure>
-
-<p>#遇到的问题</p>
-<p>##1.提交代码，忘记从远程仓库拉取最新代码，导致本地最新修改的代码无法提交上去</p>
-<p>使用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config pull.rebase false</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/59d8441d5da0434d8002101c21e9b4ab.png" alt="git"></p>
-<p>##2. 删除本地分支（分支名写错了，或不是从目标分支拉取的代码，想删掉重新拉分支）</p>
-<p>如果你还在一个分支上，那么 Git 是不允许你删除这个分支的。所以，请记得退出分支：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-
-<p>通过 <code>git branch -d &lt;branch&gt;</code>删除一个分支，比如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d fix/authentication</span><br></pre></td></tr></table></figure>
-
-<p>##3.远程删除分支</p>
-<p>使用这个命令可以远程删除分支：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;remote&gt; --delete &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<p>比如： <code>git push origin --delete fix/authentication</code>，这个分支就被远程删除了。</p>
-<p>你也可以使用这行简短的命令来远程删除分支：<code>git push &lt;remote&gt; :&lt;branch&gt;</code> 比如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :fix/authentication</span><br></pre></td></tr></table></figure>
-
-<p>如果你得到以下错误消息，可能是因为其他人已经删除了这个分支。</p>
-<blockquote>
-<p>error: unable to push to unqualified destination: remoteBranchName The destination refspec neither matches an existing ref on the remote nor begins with refs&#x2F;, and we are unable to guess a prefix based on the source ref. error: failed to push some refs to ‘git@repository_name’</p>
-</blockquote>
-
+                
                 
             </div>
             <hr/>
@@ -487,7 +412,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">xiaohu0427</a>
+                    <a href="/about" rel="external nofollow noreferrer">XIAOHU</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -497,7 +422,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://XIAOHU.github.io/2023/11/15/git%E6%95%99%E7%A8%8B%EF%BC%88%E6%8C%87%E4%BB%A4%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E5%9B%B0%E9%9A%BE%EF%BC%89/">http://XIAOHU.github.io/2023/11/15/git%E6%95%99%E7%A8%8B%EF%BC%88%E6%8C%87%E4%BB%A4%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E5%9B%B0%E9%9A%BE%EF%BC%89/</a>
+                    <a href="http://XIAOHU.github.io/2023/11/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVue/">http://XIAOHU.github.io/2023/11/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,7 +435,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">xiaohu0427</a>
+                    <a href="/about" target="_blank">XIAOHU</a>
                     !
                 </span>
             </div>
@@ -534,11 +459,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -615,45 +536,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/27/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8Bhtml/">
+                <a href="/2023/11/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="面试题之html">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">面试题之html</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文分享一些html的常见基础面试题及答案，记住这些基础，再去面试就有些底气了。
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            xiaohu0427
+                            XIAOHU
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/html/">
-                        <span class="chip bg-color">html</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -661,27 +576,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/15/git%E6%95%99%E7%A8%8B%EF%BC%88%E6%8C%87%E4%BB%A4%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E5%9B%B0%E9%9A%BE%EF%BC%89/">
+                <a href="/2023/11/29/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8Bjs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="git教程">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="面试题之js">
                         
-                        <span class="card-title">git教程</span>
+                        <span class="card-title">面试题之js</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文分享一些git的常见基础面试题及答案，记住这些基础，再去面试就有些底气了。
+                            本文分享一些js的常见基础面试题及答案，记住这些基础，再去面试就有些底气了。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-29
                             </span>
                         <span class="publish-author">
                             
@@ -691,12 +606,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/js/">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>
