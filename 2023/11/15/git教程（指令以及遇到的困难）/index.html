@@ -384,12 +384,27 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-12-10
+                </div>
                 
 
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -406,9 +421,10 @@
 <p>下最新版，根据自己电脑的情况，比如我是64位我就下64的。</p>
 <p>下载完毕后直接一路默认。选编译器那块，可以选自己用的，如vim、vscode。</p>
 <p>下载完后打开终端输入git -v可以看到：  </p>
-<p>mac:<br><img src="https://i.postimg.cc/gcZyWJRW/img5.png" alt="Mac" title="mac" /><br><img src="https://img-blog.csdnimg.cn/9ca8df71168349f5b6ab36ae65187b49.png" alt="示例图片"></p>
+<p>mac:</p>
+<p><img src="https://i.postimg.cc/85BMnGqt/mac.png" alt="mac"></p>
 <p>window:   桌面单击右键可以看到：</p>
-<p><img src="https://img-blog.csdnimg.cn/65f07ef70d114ee38219928f681bfae1.png" alt="window"></p>
+<p><img src="https://i.postimg.cc/MGTJRMsh/window.png" alt="window"></p>
 <p>有以上两个其实就是安装成功了。</p>
 <p>其中，GUI是图形界面，不适合初学者；一般我们都用的是上面的Bash，点击后会进入命令行输入框。</p>
 <p>#配置</p>
@@ -429,7 +445,7 @@
 <p>通过git init 初始化一个git仓库，通过git status命令发现有两个未被git追踪 的文件，</p>
 <p>使用git add命令将这两个文件添加到暂存区之后，</p>
 <p>再次使用git status命令，发现有两个文件可以被commit,就是我们刚刚添加的两个文件，<br>git 提示我们可以使用<code>git rm --cached &lt;file&gt;...</code>来删除暂存区内不想要的文件，接下来通过git commit进行第一次commit，再次使用git status命令查看显示工作目录和暂存区的状态。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190729232237544.png" alt="git"></p>
+<p><img src="https://i.postimg.cc/nrKPNpR4/git.png" alt="git"></p>
 <p>重点：</p>
 <p>git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被Git tracked到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</p>
 <p>#项目创建及克隆</p>
@@ -441,7 +457,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
 
 <p>初始化后会出现一个.git文件，但是这个文件是默认隐藏的，需要设置取消隐藏才能看到：</p>
-<p><img src="https://img-blog.csdnimg.cn/f1139a364328437ba24bff31006c3aa0.png" alt="tupian"></p>
+<p><img src="https://i.postimg.cc/nrKPNpR4/git.png" alt="git初始化文件"></p>
 <p>##克隆远程仓库</p>
 <p>如果在远程仓库上有项目，可以使用进行克隆：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone url</span><br></pre></td></tr></table></figure>
@@ -451,7 +467,7 @@
 <p>使用命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config pull.rebase false</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/59d8441d5da0434d8002101c21e9b4ab.png" alt="git"></p>
+<p><img src="https://i.postimg.cc/25ZR2RDw/status.png" alt="无法提交代码"></p>
 <p>##2. 删除本地分支（分支名写错了，或不是从目标分支拉取的代码，想删掉重新拉分支）</p>
 <p>如果你还在一个分支上，那么 Git 是不允许你删除这个分支的。所以，请记得退出分支：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
