@@ -4,20 +4,26 @@
   
     
     <entry>
-      <title></title>
+      <title>vue2和vue3的区别</title>
       <link href="/2023/12/15/vue2%E5%92%8Cvue3%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
       <url>/2023/12/15/vue2%E5%92%8Cvue3%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>##1.生命周期的变化<br><img src="https://i.postimg.cc/SQDdc2Bf/vue2-vue3.png" alt="vue2和vue3的区别"></p><p>setup() :开始创建组件之前，在beforeCreate和created之前执行。创建的是data和method.<br>onBeforeMount() : 组件挂载到节点上之前执行的函数。<br>onMounted() : 组件挂载完成后执行的函数。<br>onBeforeUpdate(): 组件更新之前执行的函数。<br>onUpdated(): 组件更新完成之后执行的函数。<br>onBeforeUnmount(): 组件卸载之前执行的函数。<br>onUnmounted(): 组件卸载完成后执行的函数.<br>onActivated():被包含在中的组件，会多出两个生命周期钩子函数。被激活时执行。<br>onDeactivated(): 比如从 A 组件，切换到 B 组件，A 组件消失时执行。<br>onErrorCaptured(): 当捕获一个来自子孙组件的异常时激活钩子函数。<br>##2.响应式原理</p><p>Vue2 响应式原理基础是Object.defineProperty；Vue3 响应式原理基础是Proxy。</p><p>object.defineProperty，初始化的时候，会遍历data中的所有成员，使用defineProperty把对象的属性转换成get和set<br>那Vue3 为何会抛弃它呢？那肯定是有一些缺陷的。主要原因：无法监听对象或数组新增、删除的元素。</p><p>proxy的性能本身就比defineProperty要好， 另外，代理对象可以拦截属性的访问、赋值、删除等操作，不需要初始化时遍历所有的属性。  另外，如果有多层属性嵌套的话，只有访问某个属性的时候，才会递归处理下一级的属性。  使用proxy默认就可以监听到动态新增的属性，可以监听到删除的属性。可以监听数组的索引和length属性。<br>##3.多根节点</p><p>Vue3 支持了多根节点组件.<br>Vue2中，编写页面的时候，我们需要去将组件包裹在<code>&lt;div&gt;</code>中，否则报错警告。<br>Vue3，我们可以组件包含多个根节点，可以少写一层。  </p><p>在Vue2中，模板(template).标签必须有一个根元素，这是因为Vue2中的编译器(compiler)需要将模板编译成一个render函数，而一个函数只能有一个返回值。因此，Vue2需要一个根元素来包含所有的子节点，以便编译器能够将它们编译成一个返回值。</p><p>而在Vue3中，通过使用Fragment(片段)标签或者空标签，可以在template标签中包含多个根元素。这是因为Vue3中使用了新的编译器，它能够将多个根节点编译成一个返回值。这样可以让开发者更方便地组织模板结构，使代码更加简洁和易读。</p><p>使用Fragment标签可以让开发者在不增加实际DOM节点的情况下，包含多个根节点。而空标签则可以在模板中作为占位符使用，以便在编译时被忽略，从而不会影响渲染结果。<br>##4.模板指令</p><p>v-if 和 v-for 指令：在 Vue 2.0 中，v-if 和 v-for 指令不能同时使用，因为 v-for 比 v-if 先执行，导致渲染出不必要的组件。</p><p>在 Vue 3.0 中，v-if 和 v-for 可以同时使用，但是需要将 v-if 指令放在 v-for 指令的父元素上：<br>##5.diff 算法</p><p>在 Vue 2.0 中，diff 算法是通过比较新旧虚拟 DOM 树来确定必须更新的 DOM 元素的最小集合。这个过程涉及到 DOM 树的遍历和对比，非常消耗性能，尤其是在更新大量数据时，会带来性能瓶颈。</p><p>Vue 3.0 中的 diff 算法进行了改进和优化，采用了编译时优化的动态标记，并使用静态分析技术来确定哪些节点是静态的，哪些是动态的。这样，在进行 diff 比较时，只需要对动态节点进行比较，避免了对静态节点的不必要操作，从而提高了性能。</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>git教程</title>
+      <title>面试题之vue</title>
       <link href="/2023/11/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVue/"/>
       <url>/2023/11/30/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVue/</url>
       
@@ -27,7 +33,7 @@
       
         <tags>
             
-            <tag> git </tag>
+            <tag> vue </tag>
             
         </tags>
       
